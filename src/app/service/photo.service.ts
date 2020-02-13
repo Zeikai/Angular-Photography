@@ -27,7 +27,7 @@ export class PhotoService {
       );
   }
 
-  /** GET hero by id. Will 404 if id not found */
+  /** GET photo by id. Will 404 if id not found */
   getPhoto(id: number): Observable<Photo> {
     const url = `${this.photoUrl}/${id}`;
     return this.http.get<Photo>(url).pipe(
