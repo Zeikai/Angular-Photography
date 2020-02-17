@@ -7,7 +7,7 @@
   </div>
 
   <div *ngIf="selectedPhoto">
-    <!-- Modal -->
+
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -18,16 +18,19 @@
             </button>
           </div>
           <div class="modal-body">
-            <img [src]="sanitizer.bypassSecurityTrustUrl(selectedPhoto.imgSrc)" style="width: 1000px;">
+            <img [src]="sanitizer.bypassSecurityTrustUrl(selectedPhoto.imgSrc)" style="width: 600px; max-height: 600px;">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <a class="btn btn-primary" routerLink="/detail/{{selectedPhoto.id}}"  data-dismiss="modal">Edit</a>
+            <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
+  <!-- <app-photo-detail [photo]="selectedPhoto"></app-photo-detail> -->
 
   <div class="masonry-footer">
     <p>Created with &#10084; with <a href="//w3bits.com/tools/masonry-generator/" target="_blank" rel="external noopener nofollow">CSS Masonry Generator</a></p>

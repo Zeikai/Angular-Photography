@@ -43,6 +43,14 @@ export class PhotoService {
       catchError(this.handleError<Photo>('addPhoto'))
     );
   }
+
+  /** PUT: update the hero on the server */
+  updatePhoto(photo: Photo): Observable<any> {
+    return this.http.put(this.photoUrl, photo, this.httpOptions).pipe(
+      tap(_ => this.log(`updated photo id=${photo.id}`)),
+      catchError(this.handleError<any>('updatePhoto'))
+    );
+  }
   /**
  * Handle Http operation that failed.
  * Let the app continue.

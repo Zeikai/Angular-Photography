@@ -58,3 +58,7 @@ app-photo {
 .masonry-footer:focus {
   opacity: 0.75;
 }
+
+.modal-lg {
+  max-width: 600px;
+}
